@@ -17,6 +17,9 @@ export class SellSeatComponent implements OnInit {
   @ViewChild('NameField') NameField: ElementRef;
   @ViewChild('FlightNumField') FlightNumField: ElementRef;
   @ViewChild('SeatField') SeatField: ElementRef;
+  @ViewChild('DestField') DestField: ElementRef;
+  @ViewChild('OriginField') OriginField: ElementRef;
+  @ViewChild('DateField') DateField: ElementRef;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -68,9 +71,9 @@ export class SellSeatComponent implements OnInit {
     var name = this.NameField.nativeElement.value;
     var flightNum = this.FlightNumField.nativeElement.value;
     var seat = this.SeatField.nativeElement.value;
-    var date = "2022-01-30";
-    var origin = "ORD";
-    var dest = "IAH";
+    var date = this.DateField.nativeElement.value;
+    var origin = this.OriginField.nativeElement.value;
+    var dest = this.DestField.nativeElement.value;
     this.serverService.sellSeat(flightNum,seat,date,name,dest,origin).subscribe((response:any)=>{
       console.log("sold");
     });
