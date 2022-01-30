@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { environment } from '../environments/environment';
 import { Parse } from "parse";
 import { RegisterComponent } from './register/register.component';
+import { ChooseFlightComponent } from './chooseFlight/chooseFlight.component';
+
 
 Parse.initialize(environment.PARSE_APP_ID, environment.PARSE_JS_KEY);
 Parse.serverURL = environment.serverURL;
@@ -15,7 +17,8 @@ Parse.serverURL = environment.serverURL;
   declarations: [
     AppComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChooseFlightComponent
   ],
   imports: [
     BrowserModule,

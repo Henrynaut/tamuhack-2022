@@ -8,7 +8,7 @@ import { Parse } from 'parse';
   templateUrl: './chooseFlight.component.html',
   styleUrls: ['./chooseFlight.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class ChooseFlightComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
