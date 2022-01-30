@@ -11,10 +11,15 @@ export class WebRequestService {
   }
 
   get(uri: string){
-    this.http.get(`${this.ROOT_URL}/${uri}`);
+    return this.http.get(`${this.ROOT_URL}/${uri}`);
 
   }
+  
   post(uri: string, payload: Object){
+    console.log("in Post");
+    console.log(uri);
+    console.log(payload);
+    console.log(`${this.ROOT_URL}/${uri}`);
     return this.http.post(`${this.ROOT_URL}/${uri}`,payload);
   }
   delete(uri: string){

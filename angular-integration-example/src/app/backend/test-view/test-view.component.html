@@ -1,5 +1,14 @@
 <p>test-view works!</p>
 
-<button (click) = "createNewList">test</button>
+<button (click) = "createNewList()">test</button>
 
-<div class = "hello"></div>
+<div #myElement>test</div>
+
+
+<input type="text" name="name" #myNameElem />
+<button (click) = "putVal()">Submit</button>
+
+<button (click) = "testFunc()">Cool Kid Button</button>
+<button (click) = "getF()">Get Flights</button><br>
+<button (click) = "addSeatTest()">Add seat test</button>
+<button (click) = "tempUpdateSeats()">Seat Wipe</button>
