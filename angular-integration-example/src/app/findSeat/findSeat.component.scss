@@ -1,0 +1,26 @@
+#signup{
+    h2{
+        align-items: center;
+    }
+    .box-form{
+        .formLogin{
+            margin: 0 auto;
+            width: 30%;
+        }
+        
+    }
+}
+
+.invalid-feedback{
+    font-size: 10px;
+    color:#ff1d1d;
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

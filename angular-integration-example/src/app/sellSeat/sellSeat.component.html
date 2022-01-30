@@ -1,0 +1,36 @@
+<section id="signup">
+    <div class="container">
+        <div class="row box-form">
+            <div class="col-sm-12">
+                <h2>Sell Seat</h2>
+            </div>
+        </div>
+
+      <div style="margin-bottom:20px;">
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+    
+      <div style="margin-bottom:20px;">
+        <label for="address">
+         Flight #
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <div style="margin-bottom:20px;">
+        <label for="address">
+         Seat #
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            Submit
+        </button>
+    </div>    
+    
+    
+    </div>
+</section>
