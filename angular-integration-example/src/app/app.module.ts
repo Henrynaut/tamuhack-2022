@@ -10,6 +10,10 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TestViewComponent } from './backend/test-view/test-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FindSeatComponent } from './findSeat/findSeat.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 Parse.initialize(environment.PARSE_APP_ID, environment.PARSE_JS_KEY);
 Parse.serverURL = environment.serverURL;
@@ -19,14 +23,18 @@ Parse.serverURL = environment.serverURL;
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    TestViewComponent
+    TestViewComponent,
+    FindSeatComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
