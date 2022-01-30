@@ -7,7 +7,7 @@
         </div>
         <div class="form-group">
           <label for="status">Flight #</label>
-          <select class="form-control" name="status" [(ngModel)]="category.status">
+          <select class="form-control" name="status">
              <option [value]="1" >AA 0001</option>
              <option [value]="2" >AA 0002</option>
              <option [value]="3" >AA 0003</option>
@@ -33,7 +33,7 @@
         <label for="address">
          Arrival
         </label>
-        <input id="address" type="text" formControlName="address">
+        <input id="address" type="text" formControlName="address" placeholder="Arrival">
       </div>
       <div>
         <label for="address">
