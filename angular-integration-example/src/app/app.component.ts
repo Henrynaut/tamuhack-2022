@@ -8,8 +8,16 @@ import{UsersService}from './users.service'
 export class AppComponent {
   title = 'angular-integration';
   constructor(private user:UsersService){
-    this.user.getData().subscribe(data=>{
-      console.warn(data);
+    var obj = this.user.getData().subscribe(data=>{
+      console.log(data.map((obj) => {
+        return {
+          "arrivalTime: " : obj.arrivalTime,
+          "departureTime: " : obj.departureTime,
+          "destination: " : obj.destination.city,
+          "origin: " : obj.origin.city,
+          "flight number: " : obj.flightNumber
+        }
+      }));
     })
   }
 }
