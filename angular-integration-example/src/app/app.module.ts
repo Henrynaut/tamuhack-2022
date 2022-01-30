@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { environment } from '../environments/environment';
 import { Parse } from "parse";
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TestViewComponent } from './backend/test-view/test-view.component';
 
 Parse.initialize(environment.PARSE_APP_ID, environment.PARSE_JS_KEY);
 Parse.serverURL = environment.serverURL;
@@ -15,12 +17,14 @@ Parse.serverURL = environment.serverURL;
   declarations: [
     AppComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    TestViewComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
