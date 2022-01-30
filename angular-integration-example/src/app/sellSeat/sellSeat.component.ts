@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Parse } from 'parse';
+import { ServerService } from '../backend/server.service';
 
 @Component({
   selector: 'app-register',
@@ -13,11 +14,14 @@ export class SellSeatComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
-
+  @ViewChild('NameField') NameField: ElementRef;
+  @ViewChild('FlightNumField') FlightNumField: ElementRef;
+  @ViewChild('SeatField') SeatField: ElementRef;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private serverService: ServerService
   ) { }
 
   ngOnInit() {
@@ -37,7 +41,7 @@ export class SellSeatComponent implements OnInit {
   clearButton() {
     this.loading = false;
   }
-
+  /*
   async onSubmit() {
     this.loading = true;
     this.submitted = true;
@@ -45,7 +49,7 @@ export class SellSeatComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-
+    console.log(this.loginForm[0]);
     let user = new Parse.User();
     user.set("username", this.f.username.value);
     user.set("password", this.f.password.value);
@@ -59,5 +63,16 @@ export class SellSeatComponent implements OnInit {
       // Show the error message somewhere and let the user try again.
       alert("Error: " + error.code + " " + error.message);
     }
+  }*/
+  sellSeat(){
+    var name = this.NameField.nativeElement.value;
+    var flightNum = this.FlightNumField.nativeElement.value;
+    var seat = this.SeatField.nativeElement.value;
+    var date = "2022-01-30";
+    var origin = "ORD";
+    var dest = "IAH";
+    this.serverService.sellSeat(flightNum,seat,date,name,dest,origin).subscribe((response:any)=>{
+      console.log("sold");
+    });
   }
 }

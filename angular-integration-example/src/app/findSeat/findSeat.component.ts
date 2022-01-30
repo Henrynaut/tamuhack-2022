@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Parse } from 'parse';
+import { ServerService } from '../backend/server.service';
 
 @Component({
   selector: 'app-register',
@@ -13,11 +14,15 @@ export class FindSeatComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
-
+  @ViewChild('DateField') DateField: ElementRef;
+  @ViewChild('DestField') DestField: ElementRef;
+  @ViewChild('OriginField') OriginField: ElementRef;
+  @ViewChild('result') result: ElementRef;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private serverService: ServerService
   ) { }
 
   ngOnInit() {
@@ -37,7 +42,7 @@ export class FindSeatComponent implements OnInit {
   clearButton() {
     this.loading = false;
   }
-
+  /*
   async onSubmit() {
     this.loading = true;
     this.submitted = true;
@@ -59,5 +64,17 @@ export class FindSeatComponent implements OnInit {
       // Show the error message somewhere and let the user try again.
       alert("Error: " + error.code + " " + error.message);
     }
+  }
+  */
+  findSeat(){
+    var date = this.DateField.nativeElement.value;
+    var dest = this.DestField.nativeElement.value;
+    var origin = this.OriginField.nativeElement.value;
+
+    this.serverService.getAvailableSeats(date,dest,origin).subscribe((response:any)=>{
+      console.log("TEST");
+      console.log(response);
+      this.result.nativeElement.innerHTML = JSON.stringify(response);
+    });
   }
 }

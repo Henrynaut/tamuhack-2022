@@ -62,10 +62,10 @@ export class ServerService {
     return this.webReqService.post("getSeats",{flightNum:flightNum});
   }
   
-  sellSeat(flightNum:string,seat:string, date:string){
-    return this.webReqService.post("sellSeat",{flightNum:flightNum,seat:seat,date:date});
+  sellSeat(flightNum:string,seat:string, date:string, name:string, dest:string, origin:string){
+    return this.webReqService.post("sellSeat",{flightNum:flightNum,seat:seat,date:date,name:name,dest:dest,origin:origin});
   }
-  getAvailableSeats(date:string){
-    return this.webReqService.post("availableSeats",{date:date});
+  getAvailableSeats(date:string,dest:string,origin:string){
+    return this.webReqService.post("availableSeats",{date:date,dest:dest,origin:origin});
   }
 }

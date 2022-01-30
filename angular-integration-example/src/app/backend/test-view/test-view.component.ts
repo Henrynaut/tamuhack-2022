@@ -85,16 +85,18 @@ export class TestViewComponent implements OnInit {
     var flightNum = "1";
     var seat = "A2";
     var date = "2022-01-30";
-
-    this.serverService.sellSeat(flightNum,seat,date).subscribe((response:any)=>{
+    var origin = "ORD";
+    var dest = "IAH";
+    this.serverService.sellSeat(flightNum,seat,date,"Abhishek",dest,origin).subscribe((response:any)=>{
       console.log("sold");
     });
   }
 
   getAvailableSeats(){
     var date = "2022-01-30";
-
-    this.serverService.getAvailableSeats(date).subscribe((response:any)=>{
+    var origin = "ORD";
+    var dest = "IAH";
+    this.serverService.getAvailableSeats(date,dest,origin).subscribe((response:any)=>{
       console.log("HELOOOOOOO");
       console.log(response);
     })

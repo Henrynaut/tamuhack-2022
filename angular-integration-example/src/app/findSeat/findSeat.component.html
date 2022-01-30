@@ -9,27 +9,27 @@
         <label for="name">
           Date
         </label>
-        <input id="name" type="text" formControlName="name">
+        <input #DateField id="name" type="text" formControlName="name">
       </div>
     
       <div style="margin-bottom:20px;">
         <label for="address">
          Destination
         </label>
-        <input id="address" type="text" formControlName="address">
+        <input #DestField id="address" type="text" formControlName="address">
       </div>
       <div style="margin-bottom:20px;">
         <label for="address">
          Origin
         </label>
-        <input id="address" type="text" formControlName="address">
+        <input #OriginField id="address" type="text" formControlName="address">
       </div>
       <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">
+        <button (click) = "findSeat()"[disabled]="loading" class="btn btn-primary">
             Submit
         </button>
     </div>    
     
-    
+    <div #result></div>
     </div>
 </section>
