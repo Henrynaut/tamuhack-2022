@@ -9,6 +9,7 @@ import { Parse } from "parse";
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TestViewComponent } from './backend/test-view/test-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 Parse.initialize(environment.PARSE_APP_ID, environment.PARSE_JS_KEY);
 Parse.serverURL = environment.serverURL;
@@ -24,7 +25,8 @@ Parse.serverURL = environment.serverURL;
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
