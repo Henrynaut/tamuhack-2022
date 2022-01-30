@@ -49,9 +49,9 @@ export class TestViewComponent implements OnInit {
     });
   }
   addSeatTest(){
-    var name = "Abhi";
+    var name = "Izzy";
     var flightNum = "1";
-    var seat = "A1";
+    var seat = "A2";
     var flightSeats = "";
     /*
      var myDataPromise = myService.getData();
@@ -81,9 +81,29 @@ export class TestViewComponent implements OnInit {
     });
   }
 
+  sellSeat(){
+    var flightNum = "1";
+    var seat = "A2";
+    var date = "2022-01-30";
+
+    this.serverService.sellSeat(flightNum,seat,date).subscribe((response:any)=>{
+      console.log("sold");
+    });
+  }
+
+  getAvailableSeats(){
+    var date = "2022-01-30";
+
+    this.serverService.getAvailableSeats(date).subscribe((response:any)=>{
+      console.log("HELOOOOOOO");
+      console.log(response);
+    })
+  }
   tempUpdateSeats(){
     this.serverService.addSeat('{"A1": "","A2":"","B1":"","B2":""}',"2").subscribe((response:any)=>{
       console.log("works")
-    })
+    });
   }
+  
+  
 }

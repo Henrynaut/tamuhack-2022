@@ -28,10 +28,10 @@ export class ServerService {
 
       "flights":[
         {
-          "flightNum": "2",
-          "origin": "ORD",
-          "dest": "DFW",
-          "date": "2022-01-29",
+          "flightNum": "3",
+          "origin": "IAH",
+          "dest": "LAX",
+          "date": "2022-01-30",
           "seats": '{"A1":""},{"A2":""},{"B1":""},{"B2":""}'
         }
 
@@ -62,4 +62,10 @@ export class ServerService {
     return this.webReqService.post("getSeats",{flightNum:flightNum});
   }
   
+  sellSeat(flightNum:string,seat:string, date:string){
+    return this.webReqService.post("sellSeat",{flightNum:flightNum,seat:seat,date:date});
+  }
+  getAvailableSeats(date:string){
+    return this.webReqService.post("availableSeats",{date:date});
+  }
 }

@@ -13,6 +13,7 @@ export class ChooseFlightComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  category: any = {};
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
