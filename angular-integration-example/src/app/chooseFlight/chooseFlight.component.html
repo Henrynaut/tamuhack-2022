@@ -5,26 +5,52 @@
                 <h2>Choose Flight</h2>
             </div>
         </div>
-        <div class="row box-form">
-            <!-- <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>LIKE</button>
-                  <button mat-button>SHARE</button>
-                </mat-card-actions>
-            </mat-card> -->
-        </div>
+        <div class="form-group">
+          <label for="status">Flight #</label>
+          <select class="form-control" name="status" [(ngModel)]="category.status">
+             <option [value]="1" >AA 0001</option>
+             <option [value]="2" >AA 0002</option>
+             <option [value]="3" >AA 0003</option>
+             <option [value]="4" >AA 0004</option>
+             <option [value]="5" >AA 0005</option>
+             <option [value]="6" >AA 0006</option>
+             <option [value]="7" >AA 0007</option>
+             <option [value]="8" >AA 0008</option>
+             <option [value]="9" >AA 0009</option>
+             <option [value]="10" >AA 0010</option>
+             <option [value]="11" >AA 0011</option>
+             <option [value]="12" >AA 0012</option>
+          </select>
+      </div>
+      <div>
+        <label for="name">
+          Departure
+        </label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+    
+      <div>
+        <label for="address">
+         Arrival
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <div>
+        <label for="address">
+         Destination
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <div>
+        <label for="address">
+         Origin
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            Submit
+        </button>
+    </div>      
     </div>
 </section>
