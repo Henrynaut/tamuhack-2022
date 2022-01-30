@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
 import { Parse } from "parse";
 import { RegisterComponent } from './register/register.component';
 import { ChooseFlightComponent } from './chooseFlight/chooseFlight.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
 
 Parse.initialize(environment.PARSE_APP_ID, environment.PARSE_JS_KEY);
 Parse.serverURL = environment.serverURL;
